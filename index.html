@@ -1,13 +1,63 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vite App</title>
-    </head>
-    <body>
-        <div id="app"></div>
-        <script type="module" src="/lib/main.ts"></script>
-    </body>
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin-bottom: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<p>asdasdas</p>
+<iframe src="https://baidu.com/"></iframe>
+
+<h1>Cumulative Layout Shift Simulation</h1>
+
+<div id="content">
+    <div class="box"></div>
+    <!-- 其他内容 -->
+</div>
+
+<button onclick="simulateCLS()">Simulate CLS</button>
+<button onclick="calculateCLS()">Calculate CLS</button>
+
+
+<script src="/dist/bundle.js"></script>
+<!-- 或者使用其他格式的 bundle -->
+<script>
+    function simulateCLS() {
+        const contentDiv = document.getElementById('content');
+
+        // 模拟CLS：插入新元素导致布局变化
+        const newBox = document.createElement('div');
+        newBox.className = 'box';
+        contentDiv.appendChild(newBox);
+
+        // 或者，可以通过改变已有元素的样式来模拟CLS
+        // setTimeout(() => {
+        //   contentDiv.querySelector('.box').classList.add('hidden');
+        // }, 1000);
+    }
+
+    function calculateCLS() {
+        console.log(`Final CLS:`);
+    }
+
+    webMonitor.InitMonitor()
+</script>
+</body>
 </html>
