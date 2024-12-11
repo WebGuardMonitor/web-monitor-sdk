@@ -24,3 +24,8 @@ export interface LayoutShift extends PerformanceEntry {
     value: number;
     hadRecentInput: boolean;
 }
+
+export interface PerformanceNavigationTiming {
+    activationStart?: number;
+    responseStart?: number;
+}

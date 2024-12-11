@@ -12,6 +12,6 @@ export const getFID = (): void => {
 
         // 计算延迟时间
         const delay: number = entry.processingStart - entry.startTime;
-        console.log('FID:', delay, entry);
+        console.log('FID:', delay);
     }).observe({type: 'first-input', buffered: true});
 }

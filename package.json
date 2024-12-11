@@ -24,6 +24,7 @@
         "typescript": "^5.7.2"
     },
     "dependencies": {
+        "tti-polyfill": "^0.2.2",
         "web-vitals": "^4.2.4"
     }
 }
